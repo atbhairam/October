@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comfort Corner 🐱🐶🍫</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="hearts"></div>
+    <div class="container">
+        <h1>Hey Beautiful 💕</h1>
+        <p class="subtitle">You deserve some extra love and chocolate today 🍫</p>
+
+        <div class="gallery">
+            <img src="https://placekitten.com/300/200" alt="Cute cat" />
+            <img src="https://placedog.net/300/200" alt="Cute dog" />
+            <img src="https://cdn.pixabay.com/photo/2017/01/22/19/20/chocolate-2000984_1280.jpg" alt="Chocolate" />
+        </div>
+
+        <div class="message">
+            <p>
+                Take a deep breath 🌸<br>
+                Wrap yourself in a cozy blanket 🧣<br>
+                And remember — you’re loved, strong, and absolutely amazing 💫
+            </p>
+        </div>
+
+        <button onclick="sendLove()">💌 Send Virtual Hugs 💌</button>
+        <p id="hug" class="hidden">🤗🤗🤗 A thousand warm hugs coming your way! 🤗🤗🤗</p>
+    </div>
+
+    <footer>
+        <p>Made with 💖, 🐱, 🐶, and 🍫 by someone who adores you.</p>
+    </footer>
+
+    <script>
+        function sendLove() {
+            document.getElementById('hug').classList.toggle('hidden');
+        }
+
+        // floating hearts background
+        const heartsContainer = document.querySelector('.hearts');
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = 3 + Math.random() * 4 + 's';
+            heart.innerHTML = '💖';
+            heartsContainer.appendChild(heart);
+            setTimeout(() => heart.remove(), 7000);
+        }
+        setInterval(createHeart, 500);
+    </script>
+</body>
+</html>
